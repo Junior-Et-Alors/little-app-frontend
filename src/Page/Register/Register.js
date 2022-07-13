@@ -1,9 +1,11 @@
 import React from 'react';
 import './Register.scss';
+import Header from '../../Layouts/Header/Header'
 
 export default function Register() {
   return (
     <div className='register'>
+    <Header />
       <h1 className='register__title'>Inscription</h1>
       <form action='' className='register-form'>
         <div className='register-form__input-container'>
