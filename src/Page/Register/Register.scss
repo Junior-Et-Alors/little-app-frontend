@@ -1,0 +1,36 @@
+@import '../../Scss/Variable.scss';
+@import '../../Scss/Mixin.scss';
+
+.register{
+  width: 100%;
+  @include flexbox-column;
+  align-items: center;
+
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem
+  }
+}
+
+.register-form {
+  @include flexbox-column;
+  align-items: center;
+  width: 100%;
+
+  &__input-container {
+    @include flexbox-column;
+    border: $light-green 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: .8rem;
+    min-width: 200px;
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+
+  &__input {
+    border: none;
+    outline: none;
+    font-size: 1rem;
+  }
+}

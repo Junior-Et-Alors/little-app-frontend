@@ -1,4 +1,5 @@
 @import './Scss/Variable.scss';
+@import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;700&display=swap');
 
 
 *,
@@ -7,4 +8,9 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Heebo', sans-serif;
+}
+
+html {
+  font-size: 100%;
 }
