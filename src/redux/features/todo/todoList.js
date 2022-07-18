@@ -4,7 +4,7 @@ import axios from 'axios';
 export const todoListSlice = createSlice({
   name: 'todoList',
   initialState: {
-    allToDoLists: [],
+    allToDoLists: ['une todo'],
   },
   reducers: {
     getToDoLists: (state, action) => {
@@ -19,7 +19,6 @@ export const todoListSlice = createSlice({
   },
 });
 
-
 export const getToDoLists = () => async (dispatch) => {
   /*
   axios
@@ -31,3 +30,6 @@ export const getToDoLists = () => async (dispatch) => {
     })
   */
 }
+
+export const todoListsData = (state) => state.todoList
+export default todoListSlice.reducer
