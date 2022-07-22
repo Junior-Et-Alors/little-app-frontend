@@ -24,7 +24,7 @@ export const todoListSlice = createSlice({
         task: [{
           name: 'tâche 3',
           priority: 'low',
-          status: 'notStarted',
+          status: 'completed',
         },
         {
           name: 'tâche 4',

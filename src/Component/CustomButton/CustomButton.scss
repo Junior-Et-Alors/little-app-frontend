@@ -1,0 +1,17 @@
+@import '../../Scss/Mixin.scss';
+
+.xl {
+  font-size: 1.5rem;
+}
+
+.m {
+  font-size: 1rem;
+}
+
+.s {
+  font-size: 0.8rem;
+}
+
+.dot-button {
+  @include dot-button;
+}
