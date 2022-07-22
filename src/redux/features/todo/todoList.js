@@ -4,18 +4,49 @@ import axios from 'axios';
 export const todoListSlice = createSlice({
   name: 'todoList',
   initialState: {
-    allToDoLists: ['une todo'],
+    allToDoLists: [
+      {
+        name: '1ère todo',
+        task: [{
+          name: 'tâche 1',
+          priority: 'low',
+          status: 'notStarted',
+        },
+        {
+          name: 'tâche 2',
+          priority: 'low',
+          status: 'notStarted',
+        },
+      ],
+      },
+      {
+        name: '2ème todo',
+        task: [{
+          name: 'tâche 3',
+          priority: 'low',
+          status: 'notStarted',
+        },
+        {
+          name: 'tâche 4',
+          priority: 'low',
+          status: 'notStarted',
+        },
+      ],
+      },
+    ],
   },
   reducers: {
     getToDoLists: (state, action) => {
       state.allToDoLists = [action.payload];
     },
     addTodoList: (state, action) => {
-      state.allToDoLists.push(action.payload)
+      state.allToDoLists.push(action.payload);
     },
     removeTodoList: (state, action) => {
-      state.allToDoLists = state.allToDoLists.filter(toDoList => toDoList.id !== action.payload)
-    }
+      state.allToDoLists = state.allToDoLists.filter(
+        (toDoList) => toDoList.id !== action.payload
+      );
+    },
   },
 });
 
@@ -29,7 +60,7 @@ export const getToDoLists = () => async (dispatch) => {
       dispatch(getToDoLists(response.data))
     })
   */
-}
+};
 
-export const todoListsData = (state) => state.todoList
-export default todoListSlice.reducer
+export const todoLists = (state) => state.todoList.allToDoLists;
+export default todoListSlice.reducer;

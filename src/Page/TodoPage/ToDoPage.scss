@@ -1,0 +1,6 @@
+@import '../../Scss/Mixin.scss';
+
+.todo-page {
+  @include flexbox-column;
+  align-items: center;
+}
