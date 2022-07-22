@@ -10,6 +10,8 @@ export default function ListRow(props) {
     status === 'completed' ? setStatus('notStarted') : setStatus('completed');
   };
 
+  console.log('render');
+
   return (
     <div className='list-row'>
       <div className='list-row__data-container'>

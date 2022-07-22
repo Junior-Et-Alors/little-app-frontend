@@ -5,19 +5,3 @@
   flex-direction: column;
 }
 
-
-// Button 
-
-@mixin dot-button {
-  background: none;
-  border: none;
-  display: flex;
-  align-items: center;
-  transition: transform ease-in-out 200ms;
-  height: 35px;
-
-  &:hover{
-    transform: scale(1.15);
-    cursor: pointer
-  }
-}

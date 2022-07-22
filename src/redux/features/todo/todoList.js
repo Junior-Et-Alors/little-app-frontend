@@ -17,17 +17,22 @@ export const todoListSlice = createSlice({
           priority: 'low',
           status: 'notStarted',
         },
+        {
+          name: 'tâche 3',
+          priority: 'low',
+          status: 'notStarted',
+        },
       ],
       },
       {
         name: '2ème todo',
         task: [{
-          name: 'tâche 3',
+          name: 'tâche 4',
           priority: 'low',
           status: 'completed',
         },
         {
-          name: 'tâche 4',
+          name: 'tâche 5',
           priority: 'low',
           status: 'notStarted',
         },

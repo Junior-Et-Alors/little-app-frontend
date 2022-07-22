@@ -1,4 +1,4 @@
-@import '../../Scss/Mixin.scss';
+@import '../../Scss/Variable.scss';
 
 .xl {
   font-size: 1.5rem;
@@ -13,5 +13,29 @@
 }
 
 .dot-button {
-  @include dot-button;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  transition: transform ease-in-out 200ms;
+  height: 35px;
+
+  &:hover{
+    transform: scale(1.15);
+    cursor: pointer
+  }
+}
+
+.add-button {
+  background-color: $light-green;
+  border: none;
+  transition: background-color ease-in-out 100ms;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: $medium-green;
+    cursor: pointer;
+  }
 }
