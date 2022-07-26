@@ -1,10 +1,10 @@
 import React from 'react';
 import './CustomButton.scss'
 
-export default function CustomButton(props) {
+export default React.memo(function CustomButton(props) {
   return (
-    <button onClick={() => console.log('click')} className={props.class}>
+    <button onClick={props.handleClick ? () => props.handleClick() : undefined} className={props.class}>
       {props.txt}
     </button>
   )
-}
+})

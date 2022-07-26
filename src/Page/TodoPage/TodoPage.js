@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from '../../Layouts/Header/Header';
 import { useSelector, useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
@@ -9,9 +9,15 @@ import { BsPlusLg } from 'react-icons/bs';
 import './ToDoPage.scss';
 
 export default function TodoPage() {
+
   const allTodoLists = useSelector(todoLists);
 
-  console.log(allTodoLists);
+  const [modal, setModal] = useState(false)
+
+  const toggleModal = () => {
+    setModal(!modal)
+    console.log(modal);
+  }
 
   return (
     <>
@@ -22,10 +28,11 @@ export default function TodoPage() {
           <CustomButton
             txt={<BsPlusLg />}
             class='todo-page__add-button add-button'
+            handleClick={toggleModal}
           />
         </div>
         {allTodoLists.map((list) => {
-          return <ListBox key={uuidv4()} {...list} />;
+          return <ListBox key={list.id} {...list} />;
         })}
       </main>
     </>

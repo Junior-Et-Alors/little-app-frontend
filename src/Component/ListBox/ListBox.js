@@ -6,7 +6,7 @@ import { BsThreeDots } from 'react-icons/bs';
 import { BsPlusLg } from 'react-icons/bs';
 import './ListBox.scss';
 
-export default function ListBox(props) {
+export default React.memo(function ListBox(props) {
   return (
     <div className='list-box'>
       <div className='list-box__header'>
@@ -21,8 +21,8 @@ export default function ListBox(props) {
             class='list-box__add-button add-button'
           />
       {props.task.map((task) => {
-        return <ListRow key={uuidv4()} {...task} />;
+        return <ListRow key={task.id} {...task} />;
       })}
     </div>
   );
-}
+})

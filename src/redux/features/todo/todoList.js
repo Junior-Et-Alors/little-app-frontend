@@ -7,18 +7,22 @@ export const todoListSlice = createSlice({
     allToDoLists: [
       {
         name: '1ère todo',
+        id: 1,
         task: [{
           name: 'tâche 1',
+          id: 1,
           priority: 'low',
           status: 'notStarted',
         },
         {
           name: 'tâche 2',
+          id: 2,
           priority: 'low',
           status: 'notStarted',
         },
         {
           name: 'tâche 3',
+          id: 3,
           priority: 'low',
           status: 'notStarted',
         },
@@ -26,13 +30,16 @@ export const todoListSlice = createSlice({
       },
       {
         name: '2ème todo',
+        id: 2,
         task: [{
           name: 'tâche 4',
+          id: 4,
           priority: 'low',
           status: 'completed',
         },
         {
           name: 'tâche 5',
+          id: 5,
           priority: 'low',
           status: 'notStarted',
         },
