@@ -5,6 +5,7 @@
   @include flexbox-column;
   align-items: center;
   padding: 0 1rem;
+  position: relative;
 
   &__header {
     width: 100%;
@@ -13,13 +14,30 @@
     align-items: center;
     margin: 1rem 0;
   }
+}
 
-  &__add-button {
-    color: $dark-gray;
-    font-weight: bold;
-    font-size: 20px;
-    width: 30px;
-    height: 30px;
-    border-radius: 15px;
+
+// Create modal
+
+.todo__create {
+  background-color: white;
+  width: 90%;
+  padding: 1rem;
+  @include flexbox-column;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  &__send-div {
+    margin: 1.5rem auto 0;
+  }
+
+  &__send-btn{
+    padding: .5rem;
+    border-radius: 18px;
+    width: 100px;
   }
 }

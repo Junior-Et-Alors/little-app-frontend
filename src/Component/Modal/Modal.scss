@@ -1,0 +1,17 @@
+@import '../../Scss/Variable.scss';
+
+.modal {
+  &__overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(33, 33, 33, 0.7);
+    z-index: 2;
+    display: flex;
+    align-items:center ;
+    justify-content: center;
+    height: calc(100vh - 44px);
+  }
+}

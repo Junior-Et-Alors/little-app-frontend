@@ -3,14 +3,12 @@ import CustomButton from '../CustomButton/CustomButton';
 import { BsThreeDots } from 'react-icons/bs';
 import './ListRow.scss';
 
-export default function ListRow(props) {
+export default React.memo(function ListRow(props) {
   const [status, setStatus] = useState(props.status);
 
   const changeStatus = () => {
     status === 'completed' ? setStatus('notStarted') : setStatus('completed');
   };
-
-  console.log('render');
 
   return (
     <div className='list-row'>
@@ -37,4 +35,4 @@ export default function ListRow(props) {
       />
     </div>
   );
-}
+})
