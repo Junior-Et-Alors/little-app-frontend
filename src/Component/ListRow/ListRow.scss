@@ -1,0 +1,51 @@
+@import '../../Scss/Variable.scss';
+
+.list-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  margin-bottom: 0.5rem;
+  border-radius: 5px;
+  padding: 0 5px;
+
+  &__data-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    position: relative;
+    width: calc(100% - 20px);
+  }
+
+  &__checkbox {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 0;
+
+    &__label {
+      width: 100%;
+      height: 35px;
+      position: absolute;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      z-index: 1;
+    }
+  }
+
+  &__txt {
+    position: relative;
+    left: 30px;
+
+    &.completed {
+      text-decoration: line-through;
+      color: rgb(179, 179, 179);
+    }
+  }
+}
+
+.check {
+  width: 200px;
+  height: 30px;
+}

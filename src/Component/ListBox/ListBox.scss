@@ -1,0 +1,28 @@
+@import '../../Scss/Mixin.scss';
+@import '../../Scss/Variable.scss';
+
+.list-box {
+  width: 300px;
+  @include flexbox-column;
+  align-items: center;
+  background-color: $light-gray;
+  border-radius: 10px;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+
+  &__header {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  &__add-button {
+    width: 100%;
+    height: 35px;
+    display: flex;
+    margin-bottom: .5rem;
+    border-radius: 17.5px;
+  }
+}
