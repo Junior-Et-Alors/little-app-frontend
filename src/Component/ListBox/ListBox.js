@@ -1,6 +1,5 @@
 import React from 'react';
 import ListRow from '../ListRow/ListRow';
-import { v4 as uuidv4 } from 'uuid';
 import CustomButton from '../CustomButton/CustomButton';
 import { BsThreeDots } from 'react-icons/bs';
 import { BsPlusLg } from 'react-icons/bs';
@@ -18,9 +17,9 @@ export default React.memo(function ListBox(props) {
       </div>
       <CustomButton
             txt={<BsPlusLg />}
-            class='list-box__add-button add-button'
+            class='list-box__add-button simple-button'
           />
-      {props.task.map((task) => {
+      {props.task && props.task.map((task) => {
         return <ListRow key={task.id} {...task} />;
       })}
     </div>

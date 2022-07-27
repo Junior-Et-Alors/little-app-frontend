@@ -1,8 +1,10 @@
-import React from 'react'
+import React from 'react';
+import './Modal.scss';
 
-export default function Modal() {
-
+export default function Modal(props) {
   return (
-    <div>Modal</div>
-  )
+    <div className='modal__overlay'>
+      {props.children}
+    </div>
+  );
 }

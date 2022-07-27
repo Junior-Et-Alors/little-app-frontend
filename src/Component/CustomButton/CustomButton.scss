@@ -1,5 +1,7 @@
 @import '../../Scss/Variable.scss';
 
+// SIZE
+
 .xl {
   font-size: 1.5rem;
 }
@@ -11,6 +13,19 @@
 .s {
   font-size: 0.8rem;
 }
+
+// SHAPE
+
+.round {
+  border-radius: 100%;
+  color: $dark-gray;
+  font-weight: bold;
+  font-size: 20px;
+  width: 30px;
+  height: 30px;
+}
+
+// STYLE
 
 .dot-button {
   background: none;
@@ -26,16 +41,16 @@
   }
 }
 
-.add-button {
+.simple-button {
   background-color: $light-green;
   border: none;
-  transition: background-color ease-in-out 100ms;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: box-shadow 150ms ease-in-out;
 
   &:hover {
-    background-color: $medium-green;
+    box-shadow: 1px 1px 5px $dark-green;
     cursor: pointer;
   }
 }
