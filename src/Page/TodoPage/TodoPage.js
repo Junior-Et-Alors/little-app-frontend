@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 import Header from '../../Layouts/Header/Header';
 import Modal from '../../Component/Modal/Modal';
 import { useSelector, useDispatch } from 'react-redux';
@@ -11,41 +11,41 @@ import './ToDoPage.scss';
 import { createToDoList } from '../../redux/features/todo/todoList';
 
 export default function TodoPage() {
-
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const allTodoLists = useSelector(todoLists);
 
-  // Modal 
-  const [modal, setModal] = useState(false);
+  // Modal
+  const [modal, setModal] = useState({ status: false, content: '' });
 
-  const toggleModal = () => {
-    setModal(!modal);
+  const toggleModal = (content) => {
+    const newModal = {...modal, status: !modal.status, content: content}
+    setModal(newModal);
   };
   // End modal
 
   const [todo, setTodo] = useState({
     name: '',
-    id: ''
-  })
+    id: '',
+  });
 
   const handleInput = (event) => {
-    const newTodo = {...todo, name: event.target.value}
-    setTodo(newTodo)
-  }
+    const newTodo = { ...todo, name: event.target.value };
+    setTodo(newTodo);
+  };
 
   const createNewTodo = async () => {
-    const newTodo = {...todo};
+    const newTodo = { ...todo };
     newTodo.id = await getNewId();
-    dispatch(createToDoList(newTodo))
-    toggleModal()
-  }
+    dispatch(createToDoList(newTodo));
+    toggleModal();
+  };
 
   const getNewId = () => {
-    const newList = [...allTodoLists]
-    return newList.pop().id + 1
-  }
+    const newList = [...allTodoLists];
+    return newList.pop().id + 1;
+  };
 
-  
+  console.log(modal);
 
   return (
     <>
@@ -53,24 +53,29 @@ export default function TodoPage() {
       <main className='todo-page'>
         {
           // Create a TODO modal
-          modal && (
+          modal.status && (
             <Modal>
-              <div className='todo__create'>
-                <div className='todo__create__header'>
-                  <h3>Créer une nouvelle Todo ?</h3>
+              <div className='todo__modal'>
+                <div className='todo__modal__header'>
+                  <h3>{modal.content === 'create' ? 'Créer une nouvelle Todo ?' : 'Editer la Todo ?' }</h3>
                   <CustomButton
                     txt={<GrClose />}
                     class='todo-page__close-btn simple-button round'
-                    handleClick={toggleModal}
+                    handleClick={() => toggleModal('')}
                     label='Fermer la fenêtre de création de ToDo'
                   />
                 </div>
-                <label htmlFor=''>Titre</label>
-                <input type='text' id='todo-create__input' onInput={(event) => handleInput(event)} value={todo.name}/>
-                <div className='todo__create__send-div'>
+                <label htmlFor='todo-create__input'>Titre</label>
+                <input
+                  type='text'
+                  id='todo-create__input'
+                  onInput={(event) => handleInput(event)}
+                  value={todo.name}
+                />
+                <div className='todo__modal__send-div'>
                   <CustomButton
-                    txt={'Créer'}
-                    class='todo__create__send-btn simple-button'
+                    txt={modal.content === 'create' ? 'Créer une todo' : 'Editer'}
+                    class='todo__modal__send-btn simple-button'
                     handleClick={createNewTodo}
                     label='Créer une todo'
                   />
@@ -85,12 +90,12 @@ export default function TodoPage() {
           <CustomButton
             txt={<BsPlusLg />}
             class='todo-page__add-btn simple-button round'
-            handleClick={toggleModal}
+            handleClick={() => toggleModal('create')}
             label='Ouvrir la fenêtre de création de ToDo'
           />
         </div>
         {allTodoLists.map((list) => {
-          return <ListBox key={list.id} {...list} />;
+          return <ListBox key={list.id} {...list} handleClick={() => toggleModal('edit')}/>;
         })}
       </main>
     </>

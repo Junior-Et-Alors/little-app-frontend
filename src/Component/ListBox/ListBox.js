@@ -13,6 +13,7 @@ export default React.memo(function ListBox(props) {
         <CustomButton
           txt={<BsThreeDots />}
           class='list-box__header__button dot-button xl'
+          handleClick={props.handleClick}
         />
       </div>
       <CustomButton
